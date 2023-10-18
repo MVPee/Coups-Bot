@@ -1,0 +1,9 @@
+1. Mini jeux
+2. Systeme de reglements
+3. Sondage 
+4. Gestion des roles automatique
+5. Mini jeu a determine
+6. Generateur de citations
+7 Help
+8. Music
+9. Citations
