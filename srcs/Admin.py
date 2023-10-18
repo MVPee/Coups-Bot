@@ -23,5 +23,16 @@ class Admin(commands.Cog):
         else:
             await ctx.send("Please specify a member to ban.")
 
+    @commands.command(name="mute")
+    @commands.has_permissions(kick_members=True)
+    async def mute(self, ctx, member: discord.Member):
+        mute_role = discord.utils.get(ctx.guild.roles, name="Mute")  
+        if mute_role:
+            await member.add_roles(mute_role)
+            await ctx.send(f"{member.mention} was silent.")
+        else:
+            mute_role = await ctx.guild.create_role(name="Mute")
+            await ctx.invoke(self.mute, member)
+
 async def setup(bot):
     await bot.add_cog(Admin(bot))

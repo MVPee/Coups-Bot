@@ -8,6 +8,7 @@ import os
 intents = discord.Intents().all()
 
 intents.message_content = True
+intents.guilds = True
 intents.members = True
 
 bot = commands.Bot(command_prefix='!', intents=intents)
@@ -20,9 +21,9 @@ async def on_ready():
     print("""
         _________                             __________        __   
         \_   ___ \  ____  __ ________  ______ \______   \ _____/  |_ 
-        /    \  \/ /  _ \|  |  \____ \/  ___/  |    /  _//  _ \   __\\
-        \     \___(  <_> )  |  /  |_> >___ \   |____\   (  <_> )  |  
-        \______  /\____/|____/|   __/____  >  |______  /\____/|__|  
+        /    \  \/ /  _ \|  |  \____ \/  ___/  \    /  _//  _ \   __\\
+        \     \___(  <_> )  |  /  |_> >___ \   /____\   (  <_> )  |  
+        \______  /\____/|____/|   __/____   > |______  /\____/|__|  
                 \/             |__|       \/          \/             
     """)
 
@@ -35,4 +36,5 @@ async def main():
     await load()
     await bot.start(BOTTOKEN)
 
-asyncio.run(main())
+if __name__ == "__main__":
+    asyncio.run(main())
